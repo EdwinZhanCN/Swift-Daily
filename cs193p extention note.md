@@ -23,7 +23,7 @@ func makeCardContent(index: Int) -> String{
         return "..."
     })
 ```
-always, by using the type inference
+always, by using the **type inference**
 > swift knows exactly what kind of function this is supposed to be.
 >>**the type is declared in the viewModel and Model, and because the return statement is the only statement inside the function so we don't need it as well, and because it is the last argument to a function and it takes a function as the type so the closure above can be rewrite like this, without argument name and index name:**
 `..) { pairIndex in "..."}` 
