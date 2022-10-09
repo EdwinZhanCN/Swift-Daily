@@ -33,3 +33,36 @@ always, by using the **type inference**
 So the program will not crush due to the globalization of `emojis`. Its full name is `EmojiMemoryGame.emojis`.
 
 when the `static` type is been used in a instance it must be wirtten in full name. like `EmojiMemoryGame.emojis`.
+
+## Viewmodel
+The tapGesture and user interaction should be placed in the model.
+`ContentView` is used to give out the UI and draws the `model`. `var viewMdel: EmojiMemoryGame`.
+**`let game = EmojiMemoryGame` the game is a constant because it points to the emoji memory game but the EmojiMemoryGame is a class instance in program, so it can be changed.**
+
+**sampel codes:**
+```swift
+private var mdoel: MemoryGame<String> = createMemoryGame()
+
+var cards: Array<MemoryGame<String>.Card>{
+    model.cards
+}
+// here, the model is totally private, the cards provide an ensurance that programmer do not need to use viewModel.model.cards, which exposing our model.
+//So maybe, maybe it is unecessary, and we can just type down
+private(set) var model: MemoryGame<String> = createMemoryGame()
+//and ignore the function below.
+```
+
+**Label view**
+```swift
+struct LabelView: View {
+    let label: Daily<String>.Label//it is the label build in the model.
+
+    var body: some View{
+        ...
+    }
+}
+```
+
+We should make the label indentifiable.`...Label: Indentifiable{var id = "Don't care type"}`
+
+Just same as the function showed in the lecture, we should have a `func choose(_ card: Card){}`
