@@ -66,3 +66,19 @@ struct LabelView: View {
 We should make the label indentifiable.`...Label: Indentifiable{var id = "Don't care type"}`
 
 Just same as the function showed in the lecture, we should have a `func choose(_ card: Card){}`
+Using print to check whether the program work.
+sample codes
+```swift
+func choose(_card: Card){
+    let chosenIndex = index(of: card)
+    var chosenCard = cards[chosenIndex]
+    chosenCard.isFaceUp.toggle()//Obviously, the logic of "Daily" should be a navigation to the detailed page of the card.
+}
+
+func index(of card: Card) -> Int{
+    return 0
+ }
+ ```
+ **Use `\()` to convert a don't care into a String**
+ **Codeing art...hhh:** `let chosenIndex = index(of: card)` `func index(of card: Card)` be readable!!!!
+ 
